@@ -3,7 +3,7 @@
 function validate_message($message)
 {
     // function to check if message is correct (must have at least 10 caracters (after trimming))
-    $message = trim($message);
+    $message = trim($message); // xóa ký tự trắng ở đầu và cuối của giá trị nhập vào
     if(strlen($message)<10){
         return  "Message must be at least 10 caracters long" ;
     }
@@ -27,7 +27,7 @@ function validate_username($username)
 function validate_email($email)
 {
     // function to check if username is correct (must be alphanumeric => Use the function 'ctype_alnum()')
-    $username =(trim($email));
+    $email =(trim($email));
     if(empty($email)) {
         return "Please enter a username";
     }

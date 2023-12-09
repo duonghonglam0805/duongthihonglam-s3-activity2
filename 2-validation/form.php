@@ -29,10 +29,10 @@ function validate_email($email)
     // function to check if username is correct (must be alphanumeric => Use the function 'ctype_alnum()')
     $email =(trim($email));
     if(empty($email)) {
-        return "Please enter a username";
+        return "Please enter a email";
     }
     if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-        return  "Username should contains only letters and numbers";
+        return  "email must contain '@'";
     }
     return ;
 }
@@ -53,7 +53,7 @@ $form_valid = false;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Here is the list of error messages that can be displayed:
     if(isset($_POST["username"])){
-        $username = htmlspecialchars($_POST["username"]);
+        $username = htmlspecialchars($_POST["username"]); // <script>  -> &lt;
         $user_error = validate_username($username);}
     if(isset($_POST["email"])){
         $email =htmlspecialchars($_POST["email"]);
